@@ -1,0 +1,6 @@
+name: AspenRenewables
+version: '${project.version}'
+main: net.mov51.aspenrenewables.AspenRenewables
+api-version: 1.19
+softdepend:
+  - 'CoreProtect'

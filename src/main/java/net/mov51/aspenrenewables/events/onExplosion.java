@@ -16,7 +16,7 @@ import static net.mov51.aspenrenewables.util.BlockManager.setBlock;
 public class onExplosion implements Listener {
     @EventHandler
     public void onExplosionEvent(EntityExplodeEvent event){
-    if(event.getEntityType() == EntityType.PRIMED_TNT)
+    if(event.getEntityType() == EntityType.PRIMED_TNT || event.getEntityType() == EntityType.CREEPER)
         setRadius(event.getLocation());
     }
     private void setRadius(Location location){

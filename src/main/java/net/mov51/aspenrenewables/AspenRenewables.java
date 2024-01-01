@@ -1,6 +1,7 @@
 package net.mov51.aspenrenewables;
 
 import net.mov51.aspenrenewables.events.DragonEggFormEventListener;
+import net.mov51.aspenrenewables.events.PiglinBarterEventListener;
 import net.mov51.aspenrenewables.events.onBlockForm;
 import net.mov51.aspenrenewables.events.onExplosion;
 import net.mov51.aspenrenewables.util.ConfigHelper;
@@ -26,6 +27,7 @@ public final class AspenRenewables extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new onBlockForm(),this);
         getServer().getPluginManager().registerEvents(new onExplosion(),this);
         getServer().getPluginManager().registerEvents(new DragonEggFormEventListener(),this);
+        getServer().getPluginManager().registerEvents(new PiglinBarterEventListener(),this);
 
     }
 

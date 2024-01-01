@@ -48,7 +48,7 @@ public class onExplosion implements Listener {
                                 }
                                 setBlock(location.getWorld().getBlockAt(loc),Material.TUFF,"#tnt");
                             }
-                            h -= (location.getWorld().getBlockAt(loc).getType().getBlastResistance() + 0.1F) * 0.1F;
+                            h -= ((location.getWorld().getBlockAt(loc).getType().getBlastResistance()/2) + 0.1F) * 0.1F;
 
                             //m n o are the coordinates of the explosion and iterate along the direction of the explosion
                             m += d * 0.30000001192092896;

@@ -5,7 +5,9 @@ import mov.naspen.naspenrenewables.util.BlockManager;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.data.Levelled;
+import org.bukkit.entity.Creeper;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Explosive;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityExplodeEvent;
@@ -15,10 +17,20 @@ import java.util.Random;
 public class onExplosion implements Listener {
     @EventHandler
     public void onExplosionEvent(EntityExplodeEvent event){
-    if(event.getEntityType() == EntityType.PRIMED_TNT || event.getEntityType() == EntityType.CREEPER)
-        setRadius(event.getLocation());
+        switch (event.getEntityType()){
+            case CREEPER:
+                setRadius(event.getLocation(),((Creeper)event.getEntity()).isPowered(), ((Creeper)event.getEntity()).getExplosionRadius());
+                break;
+            case PRIMED_TNT:
+                setRadius(event.getLocation(),((Explosive)event.getEntity()).isIncendiary(), ((Explosive)event.getEntity()).getYield());
+                break;
+            case ENDER_CRYSTAL, SMALL_FIREBALL, FIREBALL:
+                setRadius(event.getLocation(),true, ((Explosive)event.getEntity()).getYield());
+                break;
+        }
     }
-    private void setRadius(Location location){
+
+    private void setRadius(Location location, boolean hot, float power){
         Random r = new Random();
         int k;
         int l;
@@ -34,7 +46,7 @@ public class onExplosion implements Listener {
                         e /= g;
                         f /= g;
                         //4 is the strength of tnt explosions
-                        float h = 4 * (0.7F + r.nextFloat() * 0.6F);
+                        float h = power * (0.7F + r.nextFloat() * 0.6F);
                         double m = location.getX();
                         double n = location.getY();
                         double o = location.getZ();
@@ -45,7 +57,11 @@ public class onExplosion implements Listener {
                                 if(!NaspenRenewables.configHelper.getConvertFlowing() && ((Levelled) location.getWorld().getBlockAt(loc).getBlockData()).getLevel() != 0){
                                     return;
                                 }
-                                BlockManager.setBlock(location.getWorld().getBlockAt(loc),Material.TUFF,"#tnt");
+                                if(location.getWorld().isUltraWarm() || hot){
+                                    BlockManager.setBlock(location.getWorld().getBlockAt(loc),Material.MAGMA_BLOCK,"#tnt");
+                                }else{
+                                    BlockManager.setBlock(location.getWorld().getBlockAt(loc),Material.TUFF,"#tnt");
+                                }
                             }
                             h -= ((location.getWorld().getBlockAt(loc).getType().getBlastResistance()/2) + 0.1F) * 0.1F;
 

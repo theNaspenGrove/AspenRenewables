@@ -1,11 +1,8 @@
 package mov.naspen.naspenrenewables;
 
-import mov.naspen.naspenrenewables.events.PiglinBarterEventListener;
-import mov.naspen.naspenrenewables.events.onBlockForm;
+import mov.naspen.naspenrenewables.events.*;
 import mov.naspen.naspenrenewables.util.MaterialGenerator;
 import mov.naspen.naspenrenewables.util.coreProtectHandler.CoreProtectHelper;
-import mov.naspen.naspenrenewables.events.DragonEggFormEventListener;
-import mov.naspen.naspenrenewables.events.onExplosion;
 import mov.naspen.naspenrenewables.util.ConfigHelper;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -28,6 +25,8 @@ public final class NaspenRenewables extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new onExplosion(),this);
         getServer().getPluginManager().registerEvents(new DragonEggFormEventListener(),this);
         getServer().getPluginManager().registerEvents(new PiglinBarterEventListener(),this);
+        getServer().getPluginManager().registerEvents(new PlayerInteractEventListener(),this);
+        getServer().getPluginManager().registerEvents(new ProjectileHitEventListener(),this);
 
     }
 

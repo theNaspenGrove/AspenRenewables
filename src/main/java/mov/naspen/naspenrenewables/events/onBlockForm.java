@@ -1,5 +1,6 @@
-package net.mov51.aspenrenewables.events;
+package mov.naspen.naspenrenewables.events;
 
+import mov.naspen.naspenrenewables.util.MaterialGenerator;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -7,9 +8,8 @@ import org.bukkit.event.block.BlockFormEvent;
 
 import java.util.Random;
 
-import static net.mov51.aspenrenewables.AspenRenewables.configHelper;
-import static net.mov51.aspenrenewables.util.BlockManager.setBlock;
-import static net.mov51.aspenrenewables.util.MaterialGenerator.*;
+import static mov.naspen.naspenrenewables.NaspenRenewables.configHelper;
+import static mov.naspen.naspenrenewables.util.BlockManager.setBlock;
 
 public class onBlockForm implements Listener {
 
@@ -20,7 +20,7 @@ public class onBlockForm implements Listener {
             case COBBLESTONE -> {
                 if (event.getBlock().getLocation().getBlockY() < 0) {
                     event.setCancelled(true);
-                    setBlock(event.getBlock(),getRandomCobbleDeepType(),"#lava");
+                    setBlock(event.getBlock(), MaterialGenerator.getRandomCobbleDeepType(),"#lava");
                 }
             }
             case STONE -> {
@@ -32,10 +32,10 @@ public class onBlockForm implements Listener {
                     }
                 } else if (event.getBlock().getLocation().getBlockY() < 0) {
                     event.setCancelled(true);
-                    setBlock(event.getBlock(),getRandomDeepType(),"#lava");
+                    setBlock(event.getBlock(), MaterialGenerator.getRandomDeepType(),"#lava");
                 }else if(event.getBlock().getLocation().getBlockY() >= 0){
                     event.setCancelled(true);
-                    setBlock(event.getBlock(),getRandomStoneType(),"#lava");
+                    setBlock(event.getBlock(), MaterialGenerator.getRandomStoneType(),"#lava");
                 }
             }
         }

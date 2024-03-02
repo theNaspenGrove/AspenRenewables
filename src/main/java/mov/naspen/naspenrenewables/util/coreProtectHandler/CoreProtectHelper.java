@@ -1,4 +1,4 @@
-package net.mov51.aspenrenewables.util.coreProtectHandler;
+package mov.naspen.naspenrenewables.util.coreProtectHandler;
 
 import net.coreprotect.CoreProtect;
 import net.coreprotect.CoreProtectAPI;

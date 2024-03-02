@@ -1,5 +1,7 @@
-package net.mov51.aspenrenewables.events;
+package mov.naspen.naspenrenewables.events;
 
+import mov.naspen.naspenrenewables.NaspenRenewables;
+import mov.naspen.naspenrenewables.util.BlockManager;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.data.Levelled;
@@ -9,9 +11,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityExplodeEvent;
 
 import java.util.Random;
-
-import static net.mov51.aspenrenewables.AspenRenewables.configHelper;
-import static net.mov51.aspenrenewables.util.BlockManager.setBlock;
 
 public class onExplosion implements Listener {
     @EventHandler
@@ -43,10 +42,10 @@ public class onExplosion implements Listener {
                         for(float p = 0.3F; h > 0.0F; h -= 0.22500001F) {
                             Location loc = new Location(location.getWorld(),m,n,o);
                             if (location.getWorld().getBlockAt(loc).getType() == Material.LAVA){
-                                if(!configHelper.getConvertFlowing() && ((Levelled) location.getWorld().getBlockAt(loc).getBlockData()).getLevel() != 0){
+                                if(!NaspenRenewables.configHelper.getConvertFlowing() && ((Levelled) location.getWorld().getBlockAt(loc).getBlockData()).getLevel() != 0){
                                     return;
                                 }
-                                setBlock(location.getWorld().getBlockAt(loc),Material.TUFF,"#tnt");
+                                BlockManager.setBlock(location.getWorld().getBlockAt(loc),Material.TUFF,"#tnt");
                             }
                             h -= ((location.getWorld().getBlockAt(loc).getType().getBlastResistance()/2) + 0.1F) * 0.1F;
 

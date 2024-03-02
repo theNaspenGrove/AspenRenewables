@@ -1,4 +1,4 @@
-package net.mov51.aspenrenewables.events;
+package mov.naspen.naspenrenewables.events;
 
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
@@ -7,8 +7,8 @@ import org.bukkit.event.entity.PiglinBarterEvent;
 
 import java.util.Random;
 
-import static net.mov51.aspenrenewables.AspenRenewables.configHelper;
-import static net.mov51.aspenrenewables.util.BlockManager.setBlock;
+import static mov.naspen.naspenrenewables.NaspenRenewables.configHelper;
+import static mov.naspen.naspenrenewables.util.BlockManager.setBlock;
 
 public class PiglinBarterEventListener implements Listener {
     @EventHandler

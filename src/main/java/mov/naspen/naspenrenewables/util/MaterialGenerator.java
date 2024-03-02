@@ -1,4 +1,4 @@
-package net.mov51.aspenrenewables.util;
+package mov.naspen.naspenrenewables.util;
 
 import org.bukkit.Material;
 

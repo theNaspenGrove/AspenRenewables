@@ -1,15 +1,15 @@
-package net.mov51.aspenrenewables;
+package mov.naspen.naspenrenewables;
 
-import net.mov51.aspenrenewables.events.DragonEggFormEventListener;
-import net.mov51.aspenrenewables.events.PiglinBarterEventListener;
-import net.mov51.aspenrenewables.events.onBlockForm;
-import net.mov51.aspenrenewables.events.onExplosion;
-import net.mov51.aspenrenewables.util.ConfigHelper;
-import net.mov51.aspenrenewables.util.MaterialGenerator;
-import net.mov51.aspenrenewables.util.coreProtectHandler.CoreProtectHelper;
+import mov.naspen.naspenrenewables.events.PiglinBarterEventListener;
+import mov.naspen.naspenrenewables.events.onBlockForm;
+import mov.naspen.naspenrenewables.util.MaterialGenerator;
+import mov.naspen.naspenrenewables.util.coreProtectHandler.CoreProtectHelper;
+import mov.naspen.naspenrenewables.events.DragonEggFormEventListener;
+import mov.naspen.naspenrenewables.events.onExplosion;
+import mov.naspen.naspenrenewables.util.ConfigHelper;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class AspenRenewables extends JavaPlugin {
+public final class NaspenRenewables extends JavaPlugin {
     public static ConfigHelper configHelper;
     public static CoreProtectHelper coreProtectHelper;
 

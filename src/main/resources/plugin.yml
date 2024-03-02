@@ -1,6 +1,6 @@
-name: AspenRenewables
+name: NaspenRenewables
 version: '${project.version}'
-main: net.mov51.aspenrenewables.AspenRenewables
+main: mov.naspen.naspenrenewables.NaspenRenewables
 api-version: 1.19
 softdepend:
   - 'CoreProtect'

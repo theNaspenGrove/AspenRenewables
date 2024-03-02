@@ -1,4 +1,4 @@
-package net.mov51.aspenrenewables.events;
+package mov.naspen.naspenrenewables.events;
 
 import io.papermc.paper.event.block.DragonEggFormEvent;
 import org.bukkit.Material;

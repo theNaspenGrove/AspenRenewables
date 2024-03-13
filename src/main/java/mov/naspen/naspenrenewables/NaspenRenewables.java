@@ -25,7 +25,7 @@ public final class NaspenRenewables extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new onExplosion(),this);
         getServer().getPluginManager().registerEvents(new DragonEggFormEventListener(),this);
         getServer().getPluginManager().registerEvents(new PiglinBarterEventListener(),this);
-        getServer().getPluginManager().registerEvents(new PlayerInteractEventListener(),this);
+        getServer().getPluginManager().registerEvents(new BlockPhysicsEventListener(),this);
         getServer().getPluginManager().registerEvents(new ProjectileHitEventListener(),this);
 
     }
